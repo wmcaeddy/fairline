@@ -334,10 +334,19 @@ try {
 
     } else if ($fn === 'getStoredDataHtml') {
         $html = '<!DOCTYPE html>' . "\n";
-        $html .= '<html><head>
+        $html .= '<html lang="en"><head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="assets/css/style.css">
             <style>
-                tr:nth-child(even){background-color: #f2f2f2;}
-                .btn-delete { color: white; background-color: red; padding: 5px 10px; text-decoration: none; border-radius: 3px; font-size: 0.8em; }
+                body { background-color: transparent; padding: 0; margin: 0; }
+                .data-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 16px; margin-bottom: 16px; }
+                .data-row { display: flex; border-bottom: 1px solid #f0f0f0; padding: 4px 0; font-size: 0.8125rem; }
+                .data-row:last-child { border-bottom: none; }
+                .data-label { width: 140px; font-weight: 600; color: var(--color-text-primary); flex-shrink: 0; }
+                .data-value { font-family: monospace; word-break: break-all; color: var(--color-text-secondary); }
+                .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+                .user-badge { background: #eef6ff; color: var(--color-primary); padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
             </style>
             <script>
                 function confirmDelete(credentialId) {
@@ -347,35 +356,39 @@ try {
                 }
             </script>
         </head>';
-        $html .= '<body style="font-family:sans-serif">';
+        $html .= '<body>';
         $registrations = loadRegistrations($registrationsFile);
         if (count($registrations) > 0) {
-            $html .= '<p>There are ' . count($registrations) . ' registrations in ' . htmlspecialchars($registrationsFile) . ':</p>';
             foreach ($registrations as $reg) {
                 $credIdHex = bin2hex($reg->credentialId);
-                $html .= '<div style="margin: 20px 0; border:1px solid black; padding: 10px;">';
-                $html .= "<div style=\"margin-bottom: 5px;\"><button class=\"btn-delete\" onclick=\"confirmDelete('$credIdHex')\">Delete this registration</button></div>";
-                $html .= '<table style="width:100%">';
+                $html .= '<div class="data-card">';
+                $html .= '<div class="card-header">';
+                $html .= '<span class="user-badge">' . htmlspecialchars($reg->userName) . '</span>';
+                $html .= '<button class="btn-danger" onclick="confirmDelete(\\' . $credIdHex . '\")">Delete</button>';
+                $html .= '</div>';
+                
                 foreach ($reg as $key => $value) {
-
                     if (is_bool($value)) {
                         $value = $value ? 'yes' : 'no';
-
                     } else if (is_null($value)) {
                         $value = 'null';
-
                     } else if (is_object($value)) {
                         $value = chunk_split(strval($value), 64);
-
                     } else if (is_string($value) && strlen($value) > 0 && htmlspecialchars($value, ENT_QUOTES) === '') {
                         $value = chunk_split(bin2hex($value), 64);
                     }
-                    $html .= '<tr><td style="width:150px;font-weight:bold;">' . htmlspecialchars($key) . '</td><td style="font-family:monospace;word-break:break-all;">' . nl2br(htmlspecialchars($value)) . '</td>';
+                    
+                    $html .= '<div class="data-row">';
+                    $html .= '<div class="data-label">' . htmlspecialchars($key) . '</div>';
+                    $html .= '<div class="data-value">' . nl2br(htmlspecialchars($value)) . '</div>';
+                    $html .= '</div>';
                 }
-                $html .= '</table></div>';
+                $html .= '</div>';
             }
         } else {
-            $html .= '<p>There are no registrations in ' . htmlspecialchars($registrationsFile) . '.</p>';
+            $html .= '<div class="text-center" style="padding: 40px; color: var(--color-text-secondary);">';
+            $html .= '<p>No registrations stored on server.</p>';
+            $html .= '</div>';
         }
         $html .= '</body></html>';
 
