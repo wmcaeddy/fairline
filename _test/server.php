@@ -360,6 +360,9 @@ try {
             <link rel="stylesheet" href="assets/css/style.css">
             <style>
                 body { background-color: transparent; padding: 0; margin: 0; }
+                .search-container { position: sticky; top: 0; background: var(--color-bg); padding: 10px 0; z-index: 5; margin-bottom: 16px; border-bottom: 1px solid var(--color-border); }
+                .search-input { width: 100%; padding: 8px 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.875rem; outline: none; }
+                .search-input:focus { border-color: var(--color-primary); }
                 .data-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 16px; margin-bottom: 16px; }
                 .data-row { display: flex; border-bottom: 1px solid #f0f0f0; padding: 4px 0; font-size: 0.8125rem; }
                 .data-row:last-child { border-bottom: none; }
@@ -374,9 +377,19 @@ try {
                         window.location.href = "server.php?fn=deleteRegistration&credentialId=" + credentialId;
                     }
                 }
+                
+                function filterData() {
+                    const term = document.getElementById("searchBar").value.toLowerCase();
+                    const cards = document.querySelectorAll(".data-card");
+                    cards.forEach(card => {
+                        const text = card.innerText.toLowerCase();
+                        card.style.display = text.includes(term) ? "block" : "none";
+                    });
+                }
             </script>
         </head>';
         $html .= '<body>';
+        $html .= '<div class="search-container"><input type="text" id="searchBar" class="search-input" placeholder="Search by name or ID..." oninput="filterData()"></div>';
         $registrations = loadRegistrations($registrationsFile);
         if (count($registrations) > 0) {
             foreach ($registrations as $reg) {
