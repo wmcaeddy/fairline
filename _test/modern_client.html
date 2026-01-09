@@ -13,11 +13,37 @@
             document.getElementById(tabId).classList.remove('hidden');
             event.currentTarget.classList.add('active');
         }
+
+        // Loading and Status helpers for verification
+        function showLoading(message = 'Communicating with authenticator...') {
+            const overlay = document.getElementById('loading-overlay');
+            const msg = document.getElementById('loading-text');
+            msg.textContent = message;
+            overlay.classList.remove('hidden');
+        }
+
+        function hideLoading() {
+            document.getElementById('loading-overlay').classList.add('hidden');
+        }
+
+        function setStatus(message, type = 'success') {
+            const container = document.getElementById('status-container');
+            const msg = document.getElementById('status-message');
+            msg.textContent = message;
+            container.className = 'status-message status-' + type;
+            container.classList.remove('hidden');
+        }
     </script>
 </head>
 <body>
     <div class="auth-wrapper">
         <div class="auth-container" style="max-width: 540px;">
+            <!-- Loading Overlay -->
+            <div id="loading-overlay" class="loading-overlay hidden">
+                <div class="spinner"></div>
+                <p id="loading-text" style="color: var(--color-text-primary); font-weight: 500;">Please wait...</p>
+            </div>
+
             <header class="auth-header">
                 <h1>Secure Login</h1>
                 <p>Register or sign in with your passkey</p>
@@ -116,7 +142,8 @@
                 </div>
             </div>
 
-            <div id="status-container" class="mt-lg hidden" style="padding: 12px; border-radius: var(--radius-md); font-size: 0.875rem; border: 1px solid var(--color-border); background: var(--color-bg);">
+            <!-- Status Container -->
+            <div id="status-container" class="hidden">
                 <p id="status-message" style="margin: 0;"></p>
             </div>
         </div>
