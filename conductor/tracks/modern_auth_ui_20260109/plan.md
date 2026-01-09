@@ -11,8 +11,8 @@
 - [x] Task: Add loading spinners and status overlays for WebAuthn handshakes. [8eef1d6]
 - [x] Task: Conductor - User Manual Verification 'Phase 2: UI Refactor' (Protocol in workflow.md) [d0e0a98]
 
-## Phase 3: Functionality & Mobile Optimization
+## Phase 3: Functionality & Mobile Optimization [checkpoint: f776325]
 - [x] Task: Migrate existing Vanilla JS logic to the new UI structure. [b6f6f8b]
 - [x] Task: Optimize the "Hybrid" (Passkey via QR) flow for mobile users. [5e246fc]
 - [x] Task: Perform cross-device testing to ensure universal clarity. [dbbed86]
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Functionality & Mobile Optimization' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Functionality & Mobile Optimization' (Protocol in workflow.md) [f776325]
