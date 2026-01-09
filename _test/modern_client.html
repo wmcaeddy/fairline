@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAuthn - Modern Auth</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        // Tab switching logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-link').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.remove('hidden');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-container" style="max-width: 540px;">
+            <header class="auth-header">
+                <h1>Secure Login</h1>
+                <p>Register or sign in with your passkey</p>
+            </header>
+
+            <nav class="tabs-nav">
+                <button class="tab-link active" onclick="switchTab('tab-auth')">Authentication</button>
+                <button class="tab-link" onclick="switchTab('tab-config')">Settings</button>
+            </nav>
+
+            <!-- Authentication Tab -->
+            <div id="tab-auth" class="tab-content">
+                <div class="form-group">
+                    <label class="form-label" for="userName">User Name</label>
+                    <input type="text" id="userName" name="userName" value="demo" required pattern="[0-9a-zA-Z]{2,}">
+                    <small class="form-help">Unique name for your account</small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="userDisplayName">Display Name</label>
+                    <input type="text" id="userDisplayName" name="userDisplayName" value="Demo Demolin" required>
+                </div>
+
+                <div class="mt-lg">
+                    <button type="button" class="btn btn-primary btn-block" onclick="createRegistration()">
+                        New Registration
+                    </button>
+                </div>
+
+                <div style="margin-top: 12px;">
+                    <button type="button" class="btn btn-secondary btn-block" onclick="checkRegistration()">
+                        Sign In with Passkey
+                    </button>
+                </div>
+
+                <div class="text-center mt-xl">
+                    <button type="button" class="btn-danger" onclick="clearRegistration()">
+                        Clear all registrations
+                    </button>
+                </div>
+            </div>
+
+            <!-- Configuration Tab -->
+            <div id="tab-config" class="tab-content hidden" style="max-height: 400px; overflow-y: auto; padding-right: 10px;">
+                <div class="form-group">
+                    <label class="form-label" for="rpId">Relying Party ID</label>
+                    <input type="text" id="rpId" name="rpId" value="">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="userId">User ID (Hex)</label>
+                    <input type="text" id="userId" name="userId" value="64656d6f64656d6f" required pattern="[0-9a-fA-F]{2,}">
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="requireResidentKey" name="requireResidentKey">
+                    <label for="requireResidentKey">Discoverable Credentials (Passkeys)</label>
+                </div>
+
+                <div class="mt-lg">
+                    <h4 style="font-size: 0.875rem; margin-bottom: 8px;">User Verification</h4>
+                    <div class="checkbox-group">
+                        <input type="radio" id="userVerification_required" name="userVerification">
+                        <label for="userVerification_required">Required</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" id="userVerification_preferred" name="userVerification">
+                        <label for="userVerification_preferred">Preferred</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" id="userVerification_discouraged" name="userVerification" checked>
+                        <label for="userVerification_discouraged">Discouraged</label>
+                    </div>
+                </div>
+
+                <div class="mt-lg">
+                    <h4 style="font-size: 0.875rem; margin-bottom: 8px;">Authenticator Types</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <div class="checkbox-group"><input type="checkbox" id="type_usb" checked><label for="type_usb">USB</label></div>
+                        <div class="checkbox-group"><input type="checkbox" id="type_nfc" checked><label for="type_nfc">NFC</label></div>
+                        <div class="checkbox-group"><input type="checkbox" id="type_ble" checked><label for="type_ble">BLE</label></div>
+                        <div class="checkbox-group"><input type="checkbox" id="type_hybrid" checked><label for="type_hybrid">Hybrid</label></div>
+                        <div class="checkbox-group"><input type="checkbox" id="type_int" checked><label for="type_int">Internal</label></div>
+                    </div>
+                </div>
+
+                <div class="mt-lg">
+                    <h4 style="font-size: 0.875rem; margin-bottom: 8px;">Attestation Formats</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <div class="checkbox-group"><input type="checkbox" id="fmt_none" checked><label for="fmt_none">None</label></div>
+                        <div class="checkbox-group"><input type="checkbox" id="fmt_packed" checked><label for="fmt_packed">Packed</label></div>
+                        <div class="checkbox-group"><input type="checkbox" id="fmt_android-key" checked><label for="fmt_android-key">Android Key</label></div>
+                        <div class="checkbox-group"><input type="checkbox" id="fmt_apple" checked><label for="fmt_apple">Apple</label></div>
+                        <div class="checkbox-group"><input type="checkbox" id="fmt_tpm" checked><label for="fmt_tpm">TPM</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="status-container" class="mt-lg hidden" style="padding: 12px; border-radius: var(--radius-md); font-size: 0.875rem; border: 1px solid var(--color-border); background: var(--color-bg);">
+                <p id="status-message" style="margin: 0;"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

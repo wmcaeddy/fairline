@@ -80,16 +80,98 @@ button {
     background: none;
     font-family: inherit;
     font-size: inherit;
+    transition: all 0.2s ease;
 }
 
-/* Input Reset */
-input {
-    font-family: inherit;
-    font-size: inherit;
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-medium);
+    gap: var(--spacing-sm);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    padding: var(--spacing-sm);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-bg);
+}
+
+.btn-danger {
+    color: var(--color-error);
+    font-size: 0.875rem;
+}
+
+.btn-block {
+    display: flex;
     width: 100%;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-primary);
+}
+
+.form-help {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    margin-top: var(--spacing-xs);
+}
+
+input[type="text"], input[type="password"], select {
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input:focus {
+    border-color: var(--color-primary);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-top: 4px;
+}
+
+.checkbox-group label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
 }
 
 /* Layout & Containers */
@@ -108,7 +190,6 @@ input {
     border-radius: var(--radius-lg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     padding: var(--spacing-xl);
-    transition: transform 0.2s ease;
 }
 
 .auth-header {
@@ -127,6 +208,26 @@ input {
     margin-bottom: 0;
 }
 
+/* Tabs */
+.tabs-nav {
+    display: flex;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--spacing-lg);
+}
+
+.tab-link {
+    padding: 10px 20px;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    border-bottom: 2px solid transparent;
+}
+
+.tab-link.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
 /* Utilities */
 .hidden {
     display: none !important;
@@ -138,6 +239,10 @@ input {
 
 .mt-lg {
     margin-top: var(--spacing-lg);
+}
+
+.mt-xl {
+    margin-top: var(--spacing-xl);
 }
 
 /* Responsive adjustments */
