@@ -149,9 +149,9 @@
                     const loginForm = document.getElementById('login-flow-container');
                     const userSection = document.getElementById('user-authenticated-section');
                     
-                    // Populate data
-                    const userName = document.getElementById('userName').value;
-                    const displayName = document.getElementById('userDisplayName').value;
+                    // Use data from server response
+                    const userName = response.userName || document.getElementById('userName').value;
+                    const displayName = response.userDisplayName || document.getElementById('userDisplayName').value;
                     
                     document.getElementById('auth-user-name').textContent = displayName || userName;
                     document.getElementById('auth-user-id').textContent = '@' + userName;

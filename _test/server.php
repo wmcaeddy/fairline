@@ -276,6 +276,13 @@ try {
 
         $return = new stdClass();
         $return->success = true;
+        
+        // Add user info to response
+        if ($reg) {
+            $return->userName = $reg->userName;
+            $return->userDisplayName = $reg->userDisplayName;
+            $return->userId = $reg->userId;
+        }
 
         header('Content-Type: application/json');
         print(json_encode($return));
