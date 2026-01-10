@@ -9,3 +9,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 *Link: [./conductor/tracks/restore_fido_features_20260110/](./conductor/tracks/restore_fido_features_20260110/)*
 \n---\n\n## [x] Track: Fix 'timed out or not allowed' error by relaxing default WebAuthn requirements.
 *Link: [./conductor/tracks/fix_webauthn_defaults_20260110/](./conductor/tracks/fix_webauthn_defaults_20260110/)*
+\n---\n\n## [x] Track: Fix registration failure by restoring User ID generation logic from username.
+*Link: [./conductor/tracks/fix_userid_generation_20260110/](./conductor/tracks/fix_userid_generation_20260110/)*
