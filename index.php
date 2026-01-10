@@ -40,6 +40,56 @@
             overflow-x: hidden;
         }
 
+        /* Header Styling */
+        .site-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            z-index: 100;
+            background: transparent;
+        }
+
+        .site-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .site-logo span {
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .site-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .site-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .site-nav a:hover {
+            color: var(--color-secondary);
+        }
+
         /* Layout Structure */
         .page-wrapper {
             display: flex;
@@ -128,57 +178,89 @@
 
         input[type="text"] {
             width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #ddd;
+            padding: 14px 16px;
+            border: 1px solid #e0e0e0;
             border-radius: 4px;
             font-family: inherit;
             font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--color-secondary);
         }
 
         .btn {
             display: block;
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             border: none;
             border-radius: 4px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn-primary {
             background-color: var(--color-primary);
             color: white;
+            box-shadow: 0 4px 12px rgba(26, 51, 74, 0.2);
         }
 
         .btn-primary:hover {
             background-color: #2c4a68;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(26, 51, 74, 0.3);
         }
 
         .btn-secondary {
-            background-color: transparent;
-            border: 2px solid var(--color-primary);
-            color: var(--color-primary);
+            background-color: white;
+            border: 1px solid #ddd;
+            color: #555;
             margin-top: 15px;
         }
 
         .btn-secondary:hover {
-            background-color: var(--color-primary);
-            color: white;
+            border-color: var(--color-primary);
+            color: var(--color-primary);
         }
 
         /* Footer Style */
         .site-footer {
-            margin-top: 40px;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
             font-size: 0.8rem;
             color: #888;
-            text-align: center;
+        }
+
+        .site-footer .footer-links {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .site-footer .footer-links a {
+            color: #666;
+            text-decoration: none;
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
+            .site-header {
+                position: relative;
+                background: var(--color-primary);
+                padding: 15px 20px;
+            }
+            .site-nav {
+                display: none; /* Hide nav on mobile for simplicity in this track */
+            }
             .branding-side {
                 display: none; /* Hide branding side on mobile/tablet per requirement B */
             }
@@ -189,35 +271,23 @@
                 padding: 40px 20px;
             }
         }
-
-        /* Existing Utilities from modern_client */
-        .hidden { display: none; }
-        .loading-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255,255,255,0.9);
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .status-message {
-            padding: 12px;
-            border-radius: 4px;
-            margin-top: 20px;
-            font-size: 0.9rem;
-        }
-        .status-success { background: #e6f4ea; color: #1e7e34; }
-        .status-error { background: #fce8e6; color: #d93025; }
     </style>
-
-    <script>
-        // Placeholder for WebAuthn JS (will migrate from modern_client.html)
-        // ... (Logic to be integrated in Phase 5)
-    </script>
 </head>
 <body>
+    <header class="site-header">
+        <a href="./" class="site-logo">
+            FAIRLINE
+            <span>中飛科技股份有限公司</span>
+        </a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="#">關於我們</a></li>
+                <li><a href="#">解決方案</a></li>
+                <li><a href="#">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="page-wrapper">
         <!-- Left Side: Branding -->
         <div class="branding-side">
@@ -260,6 +330,10 @@
             </div>
 
             <footer class="site-footer">
+                <div class="footer-links">
+                    <a href="#">網站地圖</a>
+                    <a href="#">隱私權政策</a>
+                </div>
                 <p>Copyright © Fairline Technology co., ltd. All rights Reserved.</p>
             </footer>
         </div>

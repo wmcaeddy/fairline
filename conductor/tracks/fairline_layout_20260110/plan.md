@@ -12,11 +12,11 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Core Layout' (Protocol in workflow.md)
 
 ## Phase 3: Fairline Visual Styling
-- [ ] Task: Implement Header and Navigation according to Fairline style.
-- [ ] Task: Implement Footer according to Fairline style.
-- [ ] Task: Apply typography and color palette globally via CSS variables.
-- [ ] Task: Style the auth forms (buttons, inputs) to match the brand.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Visual Styling' (Protocol in workflow.md)
+- [x] Task: Implement Header and Navigation according to Fairline style.
+- [x] Task: Implement Footer according to Fairline style.
+- [x] Task: Apply typography and color palette globally via CSS variables.
+- [x] Task: Style the auth forms (buttons, inputs) to match the brand.
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Visual Styling' (Protocol in workflow.md)
 
 ## Phase 4: Branding Side Content
 - [ ] Task: Replicate the "hero" look of the Fairline homepage on the branding side of the split-screen.
