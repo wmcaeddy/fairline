@@ -610,11 +610,24 @@
 
         function reloadServerPreview() {
             // Not implemented in this simple view
+            let iframe = document.getElementById('serverPreview');
+            if (iframe) iframe.src = iframe.src;
+        }
+
+        function toggleSettings() {
+            document.getElementById('advanced-settings').classList.toggle('hidden');
+        }
+
+        function togglePreview() {
+            document.getElementById('preview-container').classList.toggle('hidden');
         }
 
         window.onload = function() {
             if (!window.isSecureContext && location.protocol !== 'https:') {                
                 location.href = location.href.replace('http://', 'https://');
+            }
+            if(document.getElementById('rpId')) {
+                document.getElementById('rpId').value = location.hostname;
             }
         }
     </script>
@@ -675,6 +688,54 @@
 
                     <button class="btn btn-primary" onclick="createRegistration()">註冊新憑證</button>
                     <button class="btn btn-secondary" onclick="checkRegistration()">使用憑證登入</button>
+                    
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button type="button" style="background:none; border:none; color:#888; font-size:0.8rem; cursor:pointer; text-decoration: underline;" onclick="toggleSettings()">進階設定 (Advanced)</button>
+                    </div>
+
+                    <!-- Advanced Settings (Hidden) -->
+                    <div id="advanced-settings" class="hidden" style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px;">
+                        <div class="form-group">
+                            <label class="form-label">Relying Party ID</label>
+                            <input type="text" id="rpId" value="">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" style="display:inline-block; margin-right:10px;">Resident Key:</label>
+                            <input type="checkbox" id="requireResidentKey" checked>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">User Verification</label>
+                            <div>
+                                <label><input type="radio" name="userVerification" id="userVerification_required"> Required</label>
+                                <label><input type="radio" name="userVerification" id="userVerification_preferred"> Preferred</label>
+                                <label><input type="radio" name="userVerification" id="userVerification_discouraged" checked> Discouraged</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Authenticator Types</label>
+                            <div style="font-size: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+                                <label><input type="checkbox" id="type_usb" checked> USB</label>
+                                <label><input type="checkbox" id="type_nfc" checked> NFC</label>
+                                <label><input type="checkbox" id="type_ble" checked> BLE</label>
+                                <label><input type="checkbox" id="type_hybrid" checked> Hybrid</label>
+                                <label><input type="checkbox" id="type_int" checked> Internal</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Attestation Formats</label>
+                            <div style="font-size: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+                                <label><input type="checkbox" id="fmt_none" checked> None</label>
+                                <label><input type="checkbox" id="fmt_packed" checked> Packed</label>
+                                <label><input type="checkbox" id="fmt_android-key" checked> Android Key</label>
+                                <label><input type="checkbox" id="fmt_apple" checked> Apple</label>
+                                <label><input type="checkbox" id="fmt_tpm" checked> TPM</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- User Authenticated Section -->
@@ -700,6 +761,19 @@
 
                 <div id="status-container" class="hidden">
                     <p id="status-message"></p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 10px;">
+                    <button type="button" style="background:none; border:none; color:#bbb; font-size:0.75rem; cursor:pointer;" onclick="togglePreview()">[ Show Server Data ]</button>
+                </div>
+
+                <!-- Server Preview (Hidden) -->
+                <div id="preview-container" class="hidden" style="margin-top: 15px; border: 1px solid #eee; border-radius: 4px; padding: 10px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <h4 style="font-size: 0.8rem; margin: 0; color: #666;">Server Data</h4>
+                        <button type="button" style="background: #fce8e6; border: 1px solid #d93025; color: #d93025; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; cursor: pointer;" onclick="clearRegistration()">Clear All</button>
+                    </div>
+                    <iframe src="_test/server.php?fn=getStoredDataHtml" id="serverPreview" style="width: 100%; height: 200px; border: 1px solid #eee; background: #fafafa;"></iframe>
                 </div>
             </div>
 
