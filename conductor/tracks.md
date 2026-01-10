@@ -11,3 +11,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 *Link: [./conductor/tracks/fix_webauthn_defaults_20260110/](./conductor/tracks/fix_webauthn_defaults_20260110/)*
 \n---\n\n## [x] Track: Fix registration failure by restoring User ID generation logic from username.
 *Link: [./conductor/tracks/fix_userid_generation_20260110/](./conductor/tracks/fix_userid_generation_20260110/)*
+\n---\n\n## [x] Track: Debug and fix persistent 'timed out or not allowed' registration error.
+*Link: [./conductor/tracks/debug_registration_failure_20260110/](./conductor/tracks/debug_registration_failure_20260110/)*
