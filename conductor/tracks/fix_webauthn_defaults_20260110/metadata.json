@@ -1,0 +1,8 @@
+{
+  "track_id": "fix_webauthn_defaults_20260110",
+  "type": "bug",
+  "status": "completed",
+  "created_at": "2026-01-10T02:15:00Z",
+  "updated_at": "2026-01-10T02:25:00Z",
+  "description": "Fix 'timed out or not allowed' error by relaxing default WebAuthn requirements (Resident Key)."
+}
