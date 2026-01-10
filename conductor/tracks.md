@@ -5,4 +5,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 ---
 
 ## [x] Track: Update the layout to reflect the visual identity of fairline.com.tw with a split-screen design.
-*Link: [./conductor/tracks/fairline_layout_20260110/](./conductor/tracks/fairline_layout_20260110/)*
+*Link: [./conductor/tracks/fairline_layout_20260110/](./conductor/tracks/fairline_layout_20260110/)*\n---\n\n## [x] Track: Restore advanced FIDO configuration and data preview features to the Fairline layout.
+*Link: [./conductor/tracks/restore_fido_features_20260110/](./conductor/tracks/restore_fido_features_20260110/)*
