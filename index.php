@@ -569,16 +569,28 @@
         function getGetParams() {
             let url = '';
             // Basic params
-            url += '&rpId=' + encodeURIComponent(location.hostname);
+            url += '&rpId=' + encodeURIComponent(document.getElementById('rpId').value || location.hostname);
             url += '&userId=' + encodeURIComponent(''); // Simple impl
             url += '&userName=' + encodeURIComponent(document.getElementById('userName').value);
             url += '&userDisplayName=' + encodeURIComponent(document.getElementById('userDisplayName').value);
             
-            // Default config for simple UI
-            url += '&requireResidentKey=1';
-            url += '&userVerification=discouraged';
-            url += '&type_usb=1&type_nfc=1&type_ble=1&type_hybrid=1&type_int=1';
-            url += '&fmt_none=1&fmt_packed=1&fmt_android-key=1&fmt_apple=1&fmt_tpm=1';
+            // Resident Key
+            url += '&requireResidentKey=' + (document.getElementById('requireResidentKey').checked ? '1' : '0');
+
+            // Verification
+            if (document.getElementById('userVerification_required').checked) url += '&userVerification=required';
+            else if (document.getElementById('userVerification_preferred').checked) url += '&userVerification=preferred';
+            else if (document.getElementById('userVerification_discouraged').checked) url += '&userVerification=discouraged';
+
+            // Types
+            ['usb', 'nfc', 'ble', 'hybrid', 'int'].forEach(t => {
+                if (document.getElementById('type_' + t).checked) url += '&type_' + t + '=1';
+            });
+
+            // Formats
+            ['none', 'packed', 'android-key', 'apple', 'tpm'].forEach(f => {
+                if (document.getElementById('fmt_' + f).checked) url += '&fmt_' + f + '=1';
+            });
 
             return url;
         }
@@ -609,7 +621,6 @@
         }
 
         function reloadServerPreview() {
-            // Not implemented in this simple view
             let iframe = document.getElementById('serverPreview');
             if (iframe) iframe.src = iframe.src;
         }

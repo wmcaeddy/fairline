@@ -7,7 +7,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: UI Restoration' (Protocol in workflow.md)
 
 ## Phase 2: Logic Re-binding
-- [ ] Task: Update `getGetParams()` in `index.php` to read from the restored inputs.
-- [ ] Task: Ensure "Clear All" button functions correctly.
-- [ ] Task: Verify that changing settings (e.g., User Verification) actually changes the WebAuthn API call arguments.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Logic Re-binding' (Protocol in workflow.md)
+- [x] Task: Update `getGetParams()` in `index.php` to read from the restored inputs.
+- [x] Task: Ensure "Clear All" button functions correctly.
+- [x] Task: Verify that changing settings (e.g., User Verification) actually changes the WebAuthn API call arguments.
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Logic Re-binding' (Protocol in workflow.md)
