@@ -17,13 +17,13 @@ Goal: Replace the existing `index.php` structure with the themed Hero section.
 - [x] Task: Remove unnecessary static sections (About, Features, etc.) identified in the spec. 699fd50
 - [x] Task: Conductor - User Manual Verification 'Core Layout Migration' (Protocol in workflow.md) 1918965
 
-## Phase 3: FIDO Functionality Integration
+## Phase 3: FIDO Functionality Integration [checkpoint: c8a05b3]
 Goal: Re-integrate the WebAuthn JavaScript logic and UI controls into the new theme.
 
 - [x] Task: Port existing WebAuthn JavaScript logic (from current `index.php` or `_test/`) into the new page. a4d5614
 - [x] Task: Map the themed "Login" and "Register" buttons (or create new ones) to the WebAuthn JS functions. e03fb66
-- [ ] Task: Ensure FIDO status messages and error feedback are styled and visible within the new layout.
-- [ ] Task: Conductor - User Manual Verification 'FIDO Functionality Integration' (Protocol in workflow.md)
+- [x] Task: Ensure FIDO status messages and error feedback are styled and visible within the new layout. e03fb66
+- [x] Task: Conductor - User Manual Verification 'FIDO Functionality Integration' (Protocol in workflow.md) c8a05b3
 
 ## Phase 4: Final Polishing and Mobile Optimization
 Goal: Ensure the final result is polished and fully responsive.
