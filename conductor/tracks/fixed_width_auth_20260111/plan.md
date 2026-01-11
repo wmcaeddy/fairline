@@ -18,9 +18,9 @@ Goal: Reorder sections for mobile devices.
 - [x] Task: Ensure the Hero section below still functions correctly as a secondary visual element. c664fb3
 - [x] Task: Conductor - User Manual Verification 'Mobile Reordering' (Protocol in workflow.md) c664fb3
 
-## Phase 3: Final Verification
+## Phase 3: Final Verification [checkpoint: 79da1ef]
 Goal: Final audit of visual and functional integrity.
 
-- [ ] Task: Audit all WebAuthn buttons and states in the new layout.
-- [ ] Task: Final audit of responsiveness and cross-browser alignment.
-- [ ] Task: Conductor - User Manual Verification 'Final Audit' (Protocol in workflow.md)
+- [x] Task: Audit all WebAuthn buttons and states in the new layout. b1fd8db
+- [x] Task: Final audit of responsiveness and cross-browser alignment. b1fd8db
+- [x] Task: Conductor - User Manual Verification 'Final Audit' (Protocol in workflow.md) 79da1ef
