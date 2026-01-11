@@ -34,20 +34,21 @@
     }
     .auth-card {
         background: #fff;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-        border: 1px solid #eee;
+        padding: 50px 40px;
+        border-radius: 16px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+        border: 1px solid rgba(0,0,0,0.03);
+        transition: transform 0.3s ease;
     }
-    .auth-header {
-        text-align: center;
-        margin-bottom: 30px;
+    .auth-card:hover {
+        transform: translateY(-5px);
     }
     .auth-header h3 {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-        color: #333;
+        font-size: 2rem;
+        margin-bottom: 12px;
+        color: #2c3e50;
         font-weight: 700;
+        letter-spacing: -0.5px;
     }
     .auth-header p {
         color: #777;
