@@ -30,24 +30,27 @@
     }
     .split-screen-container {
         display: flex;
-        flex-wrap: wrap; /* Allow wrapping for mobile */
-        min-height: calc(100vh - 100px); /* Adjust based on header */
+        flex-wrap: nowrap; /* Prevent wrapping on desktop by default */
+        min-height: calc(100vh - 100px);
         width: 100%;
         position: relative;
     }
     .split-hero {
-        width: 50%;
+        flex: 1 1 auto; /* Take remaining space */
         position: relative;
         overflow: hidden;
+        min-width: 0; /* Allow shrinking if needed, though usually not desired below a point */
     }
     .split-auth {
-        width: 50%;
+        flex: 0 0 480px; /* Fixed width */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 40px;
         background: #fdfdfd;
+        border-left: 1px solid #eee; /* Subtle separator */
+        z-index: 2; /* Ensure it stays on top if overlapping occurs */
     }
 
     /* Override Banner Styles for Split Screen */
