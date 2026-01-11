@@ -14,11 +14,11 @@ This plan outlines the steps to align the project's visual identity and user exp
 - [x] Task: Integrate the new Header and Footer into `index.php` and modern UI pages. [814c58a]
 - [x] Task: Conductor - User Manual Verification 'Global Component Structure' (Protocol in workflow.md) [7f5a28d]
 
-## Phase 3: Visual Styling Implementation
-- [ ] Task: Define CSS variables for the new color palette and typography in a central stylesheet (e.g., `modern.css`).
-- [ ] Task: Overhaul component styles (buttons, cards, forms) to match the "Look & Feel" of the reference site.
-- [ ] Task: Apply the new global styles to `index.php`, ensuring high fidelity.
-- [ ] Task: Conductor - User Manual Verification 'Visual Styling Implementation' (Protocol in workflow.md)
+## Phase 3: Visual Styling Implementation [checkpoint: 2bf327b]
+- [x] Task: Define CSS variables for the new color palette and typography in a central stylesheet (e.g., `modern.css`). [64cfdda]
+- [x] Task: Overhaul component styles (buttons, cards, forms) to match the "Look & Feel" of the reference site. [64cfdda]
+- [x] Task: Apply the new global styles to `index.php`, ensuring high fidelity. [64cfdda]
+- [x] Task: Conductor - User Manual Verification 'Visual Styling Implementation' (Protocol in workflow.md) [2bf327b]
 
 ## Phase 4: Landing Page Overhaul
 - [ ] Task: Restructure the content of `index.php` to follow the section hierarchy (About, News, etc.) of the reference site.
