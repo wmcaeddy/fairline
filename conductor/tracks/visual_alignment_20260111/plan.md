@@ -8,11 +8,11 @@ This plan outlines the steps to align the project's visual identity and user exp
 - [x] Task: Create an `assets/brand/` directory and organize the sourced assets. [5de0790]
 - [x] Task: Conductor - User Manual Verification 'Brand Asset Acquisition and Analysis' (Protocol in workflow.md) [eff7598]
 
-## Phase 2: Global Component Structure
-- [ ] Task: Design and implement a responsive Header mirroring the reference site's navigation and layout.
-- [ ] Task: Design and implement a comprehensive Footer mirroring the reference site's contact info and links.
-- [ ] Task: Integrate the new Header and Footer into `index.php` and modern UI pages.
-- [ ] Task: Conductor - User Manual Verification 'Global Component Structure' (Protocol in workflow.md)
+## Phase 2: Global Component Structure [checkpoint: 7f5a28d]
+- [x] Task: Design and implement a responsive Header mirroring the reference site's navigation and layout. [814c58a]
+- [x] Task: Design and implement a comprehensive Footer mirroring the reference site's contact info and links. [814c58a]
+- [x] Task: Integrate the new Header and Footer into `index.php` and modern UI pages. [814c58a]
+- [x] Task: Conductor - User Manual Verification 'Global Component Structure' (Protocol in workflow.md) [7f5a28d]
 
 ## Phase 3: Visual Styling Implementation
 - [ ] Task: Define CSS variables for the new color palette and typography in a central stylesheet (e.g., `modern.css`).
