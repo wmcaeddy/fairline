@@ -20,11 +20,11 @@ This plan outlines the steps to align the project's visual identity and user exp
 - [x] Task: Apply the new global styles to `index.php`, ensuring high fidelity. [64cfdda]
 - [x] Task: Conductor - User Manual Verification 'Visual Styling Implementation' (Protocol in workflow.md) [2bf327b]
 
-## Phase 4: Landing Page Overhaul
-- [ ] Task: Restructure the content of `index.php` to follow the section hierarchy (About, News, etc.) of the reference site.
-- [ ] Task: Implement the grid system and layout patterns used on `fairline.com.tw`.
-- [ ] Task: Ensure the landing page is fully responsive and visually polished.
-- [ ] Task: Conductor - User Manual Verification 'Landing Page Overhaul' (Protocol in workflow.md)
+## Phase 4: Landing Page Overhaul [checkpoint: cc498bb]
+- [x] Task: Restructure the content of `index.php` to follow the section hierarchy (About, News, etc.) of the reference site. [f9dd9ca]
+- [x] Task: Implement the grid system and layout patterns used on `fairline.com.tw`. [f9dd9ca]
+- [x] Task: Ensure the landing page is fully responsive and visually polished. [f9dd9ca]
+- [x] Task: Conductor - User Manual Verification 'Landing Page Overhaul' (Protocol in workflow.md) [cc498bb]
 
 ## Phase 5: Motion and Interaction
 - [ ] Task: Implement smooth section transitions and scrolling animations consistent with the reference site.
