@@ -182,15 +182,17 @@ try {
             }
 
         } else {
-            foreach ($registrations as $reg) {
-                if ($reg->userId === $userId) {
-                    $ids[] = $reg->credentialId;
+            if ($userName) {
+                foreach ($registrations as $reg) {
+                    if ($reg->userName === $userName) {
+                        $ids[] = $reg->credentialId;
+                    }
                 }
-            }
 
-            if (count($ids) === 0) {
-                error_log("WebAuthn: No registrations matched userId: " . $userId);
-                throw new Exception('no registrations found for userId ' . $userId);
+                if (count($ids) === 0) {
+                    error_log("WebAuthn: No registrations matched userName: " . $userName);
+                    throw new Exception('no registrations found for userName ' . $userName);
+                }
             }
         }
 

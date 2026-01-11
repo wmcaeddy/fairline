@@ -155,9 +155,6 @@
                     throw new Error('WebAuthn requires a secure context (HTTPS).');
                 }
 
-                const userName = document.getElementById('userName').value;
-                if (!userName) throw new Error('Please enter a User Name.');
-
                 showLoading('Preparing authentication...');
                 hideStatus();
 
