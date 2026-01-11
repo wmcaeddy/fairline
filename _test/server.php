@@ -218,7 +218,7 @@ try {
         $data = $WebAuthn->processCreate($clientDataJSON, $attestationObject, $challenge, $userVerification === 'required', true, false);
 
         // add user infos
-        $data->userId = $userId;
+        $data->userId = $userId ?: bin2hex($userName);
         $data->userName = $userName;
         $data->userDisplayName = $userDisplayName;
         //set Null to 0
