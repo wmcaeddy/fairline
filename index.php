@@ -169,8 +169,9 @@
         .split-hero, .split-auth { width: 100%; }
         .split-hero { height: 300px; } /* Fixed height for hero on mobile */
         .split-hero .banner { position: relative; } /* Reset absolute */
-        .split-auth { padding: 40px 20px; min-height: auto; }
-        .auth-card { padding: 30px 20px; box-shadow: none; border: none; background: transparent; }
+        .split-auth { padding: 40px 20px; min-height: auto; background: #fff; }
+        .auth-card { padding: 20px 0; box-shadow: none; border: none; background: transparent; }
+        .auth-header h3 { font-size: 1.6rem; }
     }
 </style>
 
