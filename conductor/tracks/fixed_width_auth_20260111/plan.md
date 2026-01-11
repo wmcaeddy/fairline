@@ -10,13 +10,13 @@ Goal: Implement the fixed/fluid split layout.
 - [x] Task: Set `.split-hero` to `flex: 1` to occupy the remaining space. 99e274b
 - [x] Task: Conductor - User Manual Verification 'Fluid Layout' (Protocol in workflow.md) 99e274b
 
-## Phase 2: Mobile Priority and Stacking
+## Phase 2: Mobile Priority and Stacking [checkpoint: c664fb3]
 Goal: Reorder sections for mobile devices.
 
-- [ ] Task: Update the 768px media query in `index.php` to use `flex-direction: column-reverse`.
-- [ ] Task: Adjust mobile-specific padding to ensure the Auth box at the top looks cohesive with the header.
-- [ ] Task: Ensure the Hero section below still functions correctly as a secondary visual element.
-- [ ] Task: Conductor - User Manual Verification 'Mobile Reordering' (Protocol in workflow.md)
+- [x] Task: Update the 768px media query in `index.php` to use `flex-direction: column-reverse`. c664fb3
+- [x] Task: Adjust mobile-specific padding to ensure the Auth box at the top looks cohesive with the header. c664fb3
+- [x] Task: Ensure the Hero section below still functions correctly as a secondary visual element. c664fb3
+- [x] Task: Conductor - User Manual Verification 'Mobile Reordering' (Protocol in workflow.md) c664fb3
 
 ## Phase 3: Final Verification
 Goal: Final audit of visual and functional integrity.
