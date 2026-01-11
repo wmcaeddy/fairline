@@ -10,12 +10,12 @@ Goal: Implement the core split-screen structure in `index.php`.
 - [x] Task: Move the `#auth-section` from its current position to the right column of the new container. 3a37447
 - [x] Task: Conductor - User Manual Verification 'Layout Refactoring' (Protocol in workflow.md) 3808dfe
 
-## Phase 2: Visual Styling and Centering
+## Phase 2: Visual Styling and Centering [checkpoint: 4fe51f0]
 Goal: Refine the styling for the right-side authentication column.
 
-- [ ] Task: Update the CSS in `index.php` to vertically and horizontally center the `.auth-wrapper` within the right column.
-- [ ] Task: Refine the Hero section CSS to ensure images and overlays adapt to the 50% width.
-- [ ] Task: Conductor - User Manual Verification 'Visual Styling' (Protocol in workflow.md)
+- [x] Task: Update the CSS in `index.php` to vertically and horizontally center the `.auth-wrapper` within the right column. 3a37447
+- [x] Task: Refine the Hero section CSS to ensure images and overlays adapt to the 50% width. 3a37447
+- [x] Task: Conductor - User Manual Verification 'Visual Styling' (Protocol in workflow.md) 4fe51f0
 
 ## Phase 3: Mobile Responsiveness
 Goal: Ensure the layout stacks correctly on small screens.
