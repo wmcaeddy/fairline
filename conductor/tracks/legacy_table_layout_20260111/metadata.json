@@ -1,0 +1,8 @@
+{
+  "track_id": "legacy_table_layout_20260111",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-01-11T15:15:00Z",
+  "updated_at": "2026-01-11T15:15:00Z",
+  "description": "Adapt the layout to the legacy table-based structure while maintaining portable FIDO functionality."
+}

@@ -34,5 +34,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-## [x] Track: Align Username and User ID for Consistent Passkey Selection
-*Link: [./conductor/tracks/align_user_ids_20260111/](./conductor/tracks/align_user_ids_20260111/)*
+
+
+## [ ] Track: Adapt the layout to the legacy table-based structure while maintaining portable FIDO functionality.
+
+*Link: [./conductor/tracks/legacy_table_layout_20260111/](./conductor/tracks/legacy_table_layout_20260111/)*
