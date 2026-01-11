@@ -316,6 +316,10 @@
     </div>
 </div>
 
+<?php include 'components/about.php'; ?>
+<?php include 'components/brands.php'; ?>
+<?php include 'components/news.php'; ?>
+
 <?php include 'components/footer.php'; ?>
 </body>
 </html>

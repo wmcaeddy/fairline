@@ -7,17 +7,17 @@
   <div class="menu showrole scroll-fade-left scroll-view" data-scroll-view="init">
     <ul class="reset">
       <li>
-        <a href="#" title="">
+        <a href="#about" title="">
           <p data-tit="ABOUT US"><span>關於正新</span></p>
         </a>
       </li>
       <li>
-        <a href="#" title="">
+        <a href="#news" title="">
           <p data-tit="NEWS EVENTS"><span>消息與報導</span></p>
         </a>
       </li>
       <li>
-        <a href="#" title="">
+        <a href="#brands" title="">
           <p data-tit="SOLUTION"><span>解決方案</span></p>
         </a>
       </li>
