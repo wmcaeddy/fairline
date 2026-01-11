@@ -29,6 +29,6 @@ Goal: Re-integrate the WebAuthn JavaScript logic and UI controls into the new th
 Goal: Ensure the final result is polished and fully responsive.
 
 - [x] Task: Refine CSS to ensure the WebAuthn controls look native to the theme. b073761
-- [ ] Task: Verify responsiveness on mobile viewports.
+- [x] Task: Verify responsiveness on mobile viewports. a3d47f4
 - [ ] Task: Perform a final audit of asset loads to ensure no 404s or console errors.
 - [ ] Task: Conductor - User Manual Verification 'Final Polishing' (Protocol in workflow.md)
