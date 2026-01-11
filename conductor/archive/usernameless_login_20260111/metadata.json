@@ -1,0 +1,8 @@
+{
+  "track_id": "usernameless_login_20260111",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-01-11T16:40:00Z",
+  "updated_at": "2026-01-11T16:40:00Z",
+  "description": "Enable Usernameless Login (Discoverable Credentials) by removing the client-side username requirement for login only, while checking the main branch for reference."
+}
