@@ -127,6 +127,32 @@
                                   使用 Passkey 登入 (Login)
                               </button>
                           </div>
+
+                          <!-- Hidden Configuration Fields for WebAuthn Logic -->
+                          <div class="hidden">
+                              <input type="text" id="rpId" value="">
+                              <input type="text" id="userId" value="">
+                              <input type="checkbox" id="requireResidentKey" checked>
+                              
+                              <!-- User Verification -->
+                              <input type="radio" name="uv" id="userVerification_required">
+                              <input type="radio" name="uv" id="userVerification_preferred">
+                              <input type="radio" name="uv" id="userVerification_discouraged" checked>
+
+                              <!-- Authenticator Types -->
+                              <input type="checkbox" id="type_usb" checked>
+                              <input type="checkbox" id="type_nfc" checked>
+                              <input type="checkbox" id="type_ble" checked>
+                              <input type="checkbox" id="type_hybrid" checked>
+                              <input type="checkbox" id="type_int" checked>
+
+                              <!-- Attestation Formats -->
+                              <input type="checkbox" id="fmt_none" checked>
+                              <input type="checkbox" id="fmt_packed" checked>
+                              <input type="checkbox" id="fmt_android-key" checked>
+                              <input type="checkbox" id="fmt_apple" checked>
+                              <input type="checkbox" id="fmt_tpm" checked>
+                          </div>
                       </div>
 
                       <!-- Authenticated State -->

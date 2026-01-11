@@ -1,10 +1,15 @@
 /**
- * WebAuthn Logic
+ * WebAuthn Logic - Updated & Synchronized with Master
  */
+
 async function createRegistration() {
     try {
         if (!window.fetch || !navigator.credentials || !navigator.credentials.create) {
             throw new Error('Browser not supported.');
+        }
+
+        if (!window.isSecureContext) {
+            throw new Error('WebAuthn requires a secure context (HTTPS).');
         }
 
         updateUserId();
@@ -18,6 +23,7 @@ async function createRegistration() {
         showLoading('準備註冊中...');
         hideStatus();
 
+        // get create args
         let rep = await window.fetch('_test/server.php?fn=getCreateArgs' + getGetParams(), {method:'GET', cache:'no-cache'});
         const createArgs = await rep.json();
 
@@ -27,6 +33,17 @@ async function createRegistration() {
 
         recursiveBase64StrToArrayBuffer(createArgs);
 
+        await proceedWithCreate(createArgs);
+
+    } catch (err) {
+        hideLoading();
+        reloadServerPreview();
+        setStatus(err.message || 'unknown error occured', 'error');
+    }
+}
+
+async function proceedWithCreate(createArgs) {
+    try {
         showLoading('請使用您的安全金鑰或生物辨識...');
         const cred = await navigator.credentials.create(createArgs);
 
@@ -37,7 +54,7 @@ async function createRegistration() {
         };
 
         showLoading('驗證中...');
-        rep = await window.fetch('_test/server.php?fn=processCreate' + getGetParams(), {
+        const rep = await window.fetch('_test/server.php?fn=processCreate' + getGetParams(), {
             method  : 'POST',
             body    : JSON.stringify(authenticatorAttestationResponse),
             cache   : 'no-cache'
@@ -51,11 +68,14 @@ async function createRegistration() {
         } else {
             throw new Error(response.msg);
         }
-
     } catch (err) {
         hideLoading();
         reloadServerPreview();
-        setStatus(err.message || 'unknown error occured', 'error');
+        if (err.name === 'NotAllowedError') {
+            setStatus('操作取消或逾時。在 iOS 上，這通常意味著手勢逾時或 NFC/生物辨識被拒絕。請再試一次並儘快操作。', 'error');
+        } else {
+            setStatus(err.message || 'unknown error occured', 'error');
+        }
     }
 }
 
@@ -65,9 +85,14 @@ async function checkRegistration() {
             throw new Error('Browser not supported.');
         }
 
+        if (!window.isSecureContext) {
+            throw new Error('WebAuthn requires a secure context (HTTPS).');
+        }
+
         updateUserId();
 
         const userName = document.getElementById('userName').value;
+        if (!userName) throw new Error('請輸入使用者名稱');
 
         showLoading('準備登入...');
         hideStatus();
@@ -81,6 +106,17 @@ async function checkRegistration() {
 
         recursiveBase64StrToArrayBuffer(getArgs);
 
+        await proceedWithGet(getArgs);
+
+    } catch (err) {
+        hideLoading();
+        reloadServerPreview();
+        setStatus(err.message || 'unknown error occured', 'error');
+    }
+}
+
+async function proceedWithGet(getArgs) {
+    try {
         showLoading('請驗證您的身份...');
         const cred = await navigator.credentials.get(getArgs);
 
@@ -93,7 +129,7 @@ async function checkRegistration() {
         };
 
         showLoading('驗證登入中...');
-        rep = await window.fetch('_test/server.php?fn=processGet' + getGetParams(), {
+        const rep = await window.fetch('_test/server.php?fn=processGet' + getGetParams(), {
             method:'POST',
             body: JSON.stringify(authenticatorAttestationResponse),
             cache:'no-cache'
@@ -130,11 +166,14 @@ async function checkRegistration() {
         } else {
             throw new Error(response.msg);
         }
-
     } catch (err) {
         hideLoading();
         reloadServerPreview();
-        setStatus(err.message || 'unknown error occured', 'error');
+        if (err.name === 'NotAllowedError') {
+            setStatus('操作取消或逾時。', 'error');
+        } else {
+            setStatus(err.message || 'unknown error occured', 'error');
+        }
     }
 }
 
@@ -281,13 +320,6 @@ function setStatus(message, type) {
     container.className = 'status-message status-' + type;
     container.style.display = 'block';
     container.classList.remove('hidden');
-    if(type === 'success') {
-        container.style.backgroundColor = '#e6f4ea';
-        container.style.color = '#1e7e34';
-    } else {
-        container.style.backgroundColor = '#fce8e6';
-        container.style.color = '#d93025';
-    }
 }
 
 function hideStatus() {
@@ -301,16 +333,6 @@ function hideStatus() {
 function reloadServerPreview() {
     let iframe = document.getElementById('serverPreview');
     if (iframe) iframe.src = iframe.src;
-}
-
-function toggleSettings() {
-    const settings = document.getElementById('advanced-settings');
-    if (settings) settings.classList.toggle('hidden');
-}
-
-function togglePreview() {
-    const preview = document.getElementById('preview-container');
-    if (preview) preview.classList.toggle('hidden');
 }
 
 window.onload = function() {
