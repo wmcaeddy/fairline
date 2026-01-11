@@ -225,6 +225,10 @@
                             </button>
                         </div>
 
+                        <div class="text-center" style="margin-top: 15px;">
+                            <button type="button" style="background:none; border:none; color:#bbb; font-size:0.75rem; cursor:pointer;" onclick="togglePreview()">[ Show Server Data ]</button>
+                        </div>
+
                         <div class="settings-toggle">
                             <a href="javascript:void(0);" onclick="toggleSettings()">進階設定 <i class="fa fa-cog"></i></a>
                         </div>
@@ -275,12 +279,19 @@
                         </div>
                     </div>
 
-                    <!-- Status Message -->
-                    <div id="status-container" class="status-message hidden">
-                        <p id="status-message" style="margin: 0;"></p>
-                    </div>
-                </div>
-
+                                            <!-- Status Message -->
+                                            <div id="status-container" class="status-message hidden">
+                                                <p id="status-message" style="margin: 0;"></p>
+                                            </div>
+                    
+                                            <div id="preview-container" class="hidden" style="margin-top: 15px; border: 1px solid #eee; border-radius: 4px; padding: 10px;">
+                                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                                    <h4 style="font-size: 0.8rem; margin: 0; color: #666;">Server Data</h4>
+                                                    <button type="button" style="background: #fce8e6; border: 1px solid #d93025; color: #d93025; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; cursor: pointer;" onclick="clearRegistration()">Clear All</button>
+                                                </div>
+                                                <iframe src="_test/server.php?fn=getStoredDataHtml" id="serverPreview" style="width: 100%; height: 200px; border: 1px solid #eee; background: #fafafa;"></iframe>
+                                            </div>
+                                        </div>
                 <!-- Authenticated User Section -->
                 <div id="user-authenticated-section" class="auth-card hidden">
                     <div class="user-section-card">
