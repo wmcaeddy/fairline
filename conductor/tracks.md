@@ -27,3 +27,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ## [x] Track: Align the web page style and look and feel with fairline.com.tw
 *Link: [./conductor/tracks/visual_alignment_20260111/](./conductor/tracks/visual_alignment_20260111/)*
+
+---
+
+## [ ] Track: Adjust the split-screen layout ratio to 2:1 (66% Hero, 33% Auth) for large screens, while maintaining responsiveness.
+*Link: [./conductor/tracks/adjust_split_ratio_20260111/](./conductor/tracks/adjust_split_ratio_20260111/)*
