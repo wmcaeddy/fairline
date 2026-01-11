@@ -18,16 +18,17 @@
 
     <style>
         :root {
-            --color-primary: #1a334a;
-            --color-secondary: #86a5b7;
+            --color-primary: #841852; /* ProNew Maroon */
+            --color-secondary: #620030; /* ProNew Darker Maroon */
             --color-text-dark: #222222;
             --color-text-light: #ffffff;
             --color-bg-light: #f5f5f5;
-            --font-main: "Poppins", "Microsoft JhengHei", sans-serif;
+            --font-main: "Arial", "Helvetica", "Microsoft JhengHei", sans-serif;
             --radius-md: 4px;
             --color-border: #ddd;
             --color-bg: #f9f9f9;
             --color-text-primary: #333;
+            --color-accent: #cc301f;
         }
 
         * {
@@ -111,7 +112,7 @@
             flex-direction: column;
             justify-content: center;
             padding: 60px;
-            background-image: linear-gradient(rgba(26, 51, 74, 0.8), rgba(26, 51, 74, 0.8)), url('https://www.fairline.com.tw/data/adv/202405/1714968232414929265.jpg');
+            background-image: linear-gradient(rgba(132, 24, 82, 0.8), rgba(132, 24, 82, 0.8)), url('assets/pronew/main_5.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -670,12 +671,11 @@
 <body>
     <header class="site-header">
         <a href="./" class="site-logo">
-            FAIRLINE
-            <span>中飛科技股份有限公司</span>
+            <img src="assets/pronew/logo.gif" alt="ProNew Logo" style="height: 50px;">
         </a>
         <nav class="site-nav">
             <ul>
-                <li><a href="#">關於我們</a></li>
+                <li><a href="#">關於正新</a></li>
                 <li><a href="#">解決方案</a></li>
                 <li><a href="#">聯絡我們</a></li>
             </ul>
@@ -686,12 +686,12 @@
         <!-- Left Side: Branding -->
         <div class="branding-side">
             <div class="branding-content">
-                <div class="t1">ABOUT FAIRLINE</div>
-                <h2 class="t2">關於中飛</h2>
+                <div class="t1">ABOUT PRONEW</div>
+                <h2 class="t2">關於正新</h2>
                 <div class="describe">
-                    中飛科技專精於網路安全與應用層安全技術，<br>
-                    整合產品、技術與人才，<br>
-                    提供最適合客戶需求且完善的整合性解決方案。
+                    正新電腦專精於軟體保護與資訊安全技術，<br>
+                    提供最完善的軟體反盜版與身份認證解決方案。<br>
+                    專業的團隊，精緻的服務。
                 </div>
             </div>
             <div class="scroll-prompt">SCROLL</div>
@@ -819,10 +819,10 @@
 
             <footer class="site-footer">
                 <div class="footer-links">
-                    <a href="#">網站地圖</a>
+                    <a href="#">網站導覽</a>
                     <a href="#">隱私權政策</a>
                 </div>
-                <p>Copyright © Fairline Technology co., ltd. All rights Reserved.</p>
+                <p>Copyright © ProNew Technology co., ltd. All rights Reserved.</p>
             </footer>
         </div>
     </div>
