@@ -26,11 +26,11 @@ This plan outlines the steps to align the project's visual identity and user exp
 - [x] Task: Ensure the landing page is fully responsive and visually polished. [f9dd9ca]
 - [x] Task: Conductor - User Manual Verification 'Landing Page Overhaul' (Protocol in workflow.md) [cc498bb]
 
-## Phase 5: Motion and Interaction
-- [ ] Task: Implement smooth section transitions and scrolling animations consistent with the reference site.
-- [ ] Task: Add hover states, menu transitions, and other interactive "feel" elements.
-- [ ] Task: Final pass on animations to ensure a premium, high-fidelity experience.
-- [ ] Task: Conductor - User Manual Verification 'Motion and Interaction' (Protocol in workflow.md)
+## Phase 5: Motion and Interaction [checkpoint: 2aa73b8]
+- [x] Task: Implement smooth section transitions and scrolling animations consistent with the reference site. [2081f06]
+- [x] Task: Add hover states, menu transitions, and other interactive "feel" elements. [2081f06]
+- [x] Task: Final pass on animations to ensure a premium, high-fidelity experience. [2081f06]
+- [x] Task: Conductor - User Manual Verification 'Motion and Interaction' (Protocol in workflow.md) [2aa73b8]
 
 ## Phase 6: Final Verification and Cleanup
 - [ ] Task: **CRITICAL**: Verify that `_test/client.html` remains completely untouched and functional.
