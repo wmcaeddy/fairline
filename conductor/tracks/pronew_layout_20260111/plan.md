@@ -6,10 +6,10 @@
 - [x] Task: Extract the ProNew logo or representative text branding from `index.html`. 7261b54
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Research' (Protocol in workflow.md)
 
-## Phase 2: Core Layout Structure
-- [ ] Task: Update `index.php` to use a new structure inspired by the ProNew aesthetic while maintaining the split-screen layout.
-- [ ] Task: Implement the split-screen CSS (Grid/Flexbox) with ProNew color variables.
-- [ ] Task: Ensure responsive behavior (hide branding side on mobile).
+## Phase 2: Core Layout Structure [checkpoint: ebd7898]
+- [x] Task: Update `index.php` to use a new structure inspired by the ProNew aesthetic while maintaining the split-screen layout. eed5f8d
+- [x] Task: Implement the split-screen CSS (Grid/Flexbox) with ProNew color variables. eed5f8d
+- [x] Task: Ensure responsive behavior (hide branding side on mobile). eed5f8d
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Core Layout' (Protocol in workflow.md)
 
 ## Phase 3: ProNew Visual Styling
