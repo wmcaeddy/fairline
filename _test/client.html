@@ -283,6 +283,7 @@ license https://github.com/lbuchs/WebAuthn/blob/master/LICENSE MIT
             url += '&fmt_tpm=' + (document.getElementById('fmt_tpm').checked ? '1' : '0');
 
             url += '&rpId=' + encodeURIComponent(document.getElementById('rpId').value);
+            url += '&userId=';
 
             url += '&userName=' + encodeURIComponent(document.getElementById('userName').value);
             url += '&userDisplayName=' + encodeURIComponent(document.getElementById('userDisplayName').value);

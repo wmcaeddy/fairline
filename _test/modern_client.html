@@ -351,6 +351,7 @@
             let url = '';
             // Basic params
             url += '&rpId=' + encodeURIComponent(document.getElementById('rpId').value);
+            url += '&userId=';
             url += '&userName=' + encodeURIComponent(document.getElementById('userName').value);
             url += '&userDisplayName=' + encodeURIComponent(document.getElementById('userDisplayName').value);
             url += '&requireResidentKey=' + (document.getElementById('requireResidentKey').checked ? '1' : '0');
