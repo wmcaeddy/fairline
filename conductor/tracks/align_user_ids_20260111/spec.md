@@ -1,22 +1,24 @@
 # Specification: Align Username and User ID for Consistent Passkey Selection
 
 ## Overview
-Users are reporting confusion during passkey selection because the identifiers shown by the browser/authenticator (e.g., "BtpUqA") do not match their chosen username (e.g., "eddy6"). This track aims to synchronize the `user.name`, `user.displayName`, and `user.id` fields in the WebAuthn ceremony to ensure that the user's chosen identifier is what they see and select.
+Currently, the test environment uses a hex-encoded User ID that can be independent of the Username. This causes confusion when using discoverable credentials (passkeys) on FIDO2 hardware tokens, as some authenticators may display the raw or base64-encoded User ID instead of the Display Name, leading to unrecognizable selections like "BtpUqA". This track aims to synchronize these fields so that the identity stored on the token is human-readable and consistent with the login name.
 
 ## Functional Requirements
-- **Identifier Synchronization:** Update the WebAuthn registration and authentication flows to ensure that the `user.name` and `user.displayName` fields are consistently set to the human-readable username provided by the user.
-- **User ID Alignment:** Ensure the internal `user.id` (binary) is derived directly from the username in a way that remains stable but doesn't interfere with the browser's display logic.
-- **Display Consistency:** Verify that the "Ready to Scan" and passkey selection dialogs on various platforms (especially iOS and Desktop browsers) display the expected username.
+1.  **Identity Synchronization:** Modify the registration flow so that the `user.id` (passed to `navigator.credentials.create`) is the binary equivalent of the `userName` string.
+2.  **Client Simplification:** Update `_test/modern_client.html` and `_test/client.html` to remove or hide the manual "User ID (Hex)" field, making the Username the single source of truth for identity.
+3.  **Server Logic Update:** Adjust `_test/server.php` to handle the synchronized `userId` consistently during both registration (`processCreate`) and authentication (`processGet`).
+4.  **Opaque ID Handling:** Ensure that the string-to-binary conversion for the User ID remains within the WebAuthn limit of 64 bytes.
 
 ## Non-Functional Requirements
-- **Backward Compatibility:** Existing registrations should ideally still work, but the focus is on making new registrations and the overall selection experience consistent.
-- **Security:** Maintain the requirement that `user.id` is a stable identifier for the user account.
+- **UX Consistency:** The user should only need to manage a "User Name" and "Display Name". The underlying User ID should be handled automatically.
+- **Backward Compatibility:** No migration of existing serialized data is required; the focus is on a correct experience for new enrollments.
 
 ## Acceptance Criteria
-- When registering with username "eddy6", the authenticator selection dialog clearly shows "eddy6".
-- When authenticating, the list of available passkeys displays the usernames entered during registration rather than encoded strings or internal IDs.
-- The `modern_client.html` and `server.php` are updated to enforce this alignment.
+- [ ] Registering a user with name "eddy6" results in a passkey stored on the authenticator where the user handle is exactly "eddy6".
+- [ ] During a passkey login (discoverable credential), the authenticator selection prompt clearly identifies the user by their name.
+- [ ] The "Settings" tab in the test client no longer requires manual Hex ID entry.
+- [ ] Login verification on the server correctly matches the `userHandle` returned by the authenticator against the stored username-based ID.
 
 ## Out of Scope
-- Implementing a full database-backed user management system (continuing to use the existing serialized storage).
-- Changing the core WebAuthn library logic unless necessary for this alignment.
+- Migrating or updating old records in `registrations.ser`.
+- Changing the core `lbuchs/WebAuthn` library logic (only the test implementation and usage pattern are in scope).

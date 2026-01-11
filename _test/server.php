@@ -156,7 +156,8 @@ try {
     // ------------------------------------
 
     if ($fn === 'getCreateArgs') {
-        $createArgs = $WebAuthn->getCreateArgs(\hex2bin($userId), $userName, $userDisplayName, 60*4, $requireResidentKey, $userVerification, $crossPlatformAttachment);
+        // Use userName directly as the binary source for userId to ensure human-readable identities on tokens.
+        $createArgs = $WebAuthn->getCreateArgs($userName, $userName, $userDisplayName, 60*4, $requireResidentKey, $userVerification, $crossPlatformAttachment);
 
         header('Content-Type: application/json');
         print(json_encode($createArgs));
@@ -267,8 +268,8 @@ try {
         }
 
         // if we have resident key, we have to verify that the userHandle is the provided userId at registration
-        if ($requireResidentKey && $userHandle !== hex2bin($reg->userId)) {
-            throw new \Exception('userId doesnt match (is ' . bin2hex($userHandle) . ' but expect ' . $reg->userId . ')');
+        if ($requireResidentKey && $userHandle !== $reg->userName) {
+            throw new \Exception('userId doesnt match (is ' . $userHandle . ' but expect ' . $reg->userName . ')');
         }
 
         // process the get request. throws WebAuthnException if it fails

@@ -8,5 +8,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-## [ ] Track: Align Username and User ID for Consistent Passkey Selection
+## [x] Track: Align Username and User ID for Consistent Passkey Selection
 *Link: [./conductor/tracks/align_user_ids_20260111/](./conductor/tracks/align_user_ids_20260111/)*

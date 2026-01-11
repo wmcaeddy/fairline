@@ -1,8 +1,8 @@
 {
   "track_id": "align_user_ids_20260111",
   "type": "bug",
-  "status": "new",
-  "created_at": "2026-01-11T13:00:00Z",
-  "updated_at": "2026-01-11T13:00:00Z",
-  "description": "Align username / userid stored in fido security token so that user can visually see and select the username/userid they define for consistency"
+  "status": "in_progress",
+  "created_at": "2026-01-11T18:45:27Z",
+  "updated_at": "2026-01-11T20:45:00Z",
+  "description": "Align Username and User ID to ensure human-readable identities are stored on FIDO tokens."
 }
