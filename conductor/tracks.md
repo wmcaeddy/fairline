@@ -27,3 +27,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ## [x] Track: Align the web page style and look and feel with fairline.com.tw
 *Link: [./conductor/tracks/visual_alignment_20260111/](./conductor/tracks/visual_alignment_20260111/)*
+
+---
+
+## [ ] Track: Implement 'Toggle Data Preview' button and related functionality.
+*Link: [./conductor/tracks/toggle_data_preview_20260111/](./conductor/tracks/toggle_data_preview_20260111/)*
