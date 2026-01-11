@@ -12,9 +12,9 @@ Goal: Organize and migrate all theme-related assets to the project structure.
 ## Phase 2: Core Layout Migration
 Goal: Replace the existing `index.php` structure with the themed Hero section.
 
-- [ ] Task: Extract the main HTML structure and "Hero" section from `20260111055348006/index.html`.
-- [ ] Task: Update `index.php` with the new HTML structure, including `<head>` links for CSS and scripts.
-- [ ] Task: Remove unnecessary static sections (About, Features, etc.) identified in the spec.
+- [x] Task: Extract the main HTML structure and "Hero" section from `20260111055348006/index.html`. 699fd50
+- [x] Task: Update `index.php` with the new HTML structure, including `<head>` links for CSS and scripts. 699fd50
+- [x] Task: Remove unnecessary static sections (About, Features, etc.) identified in the spec. 699fd50
 - [ ] Task: Conductor - User Manual Verification 'Core Layout Migration' (Protocol in workflow.md)
 
 ## Phase 3: FIDO Functionality Integration
