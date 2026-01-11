@@ -12,26 +12,6 @@
             <p>11492台北市內湖區瑞光路583巷32號5樓</p>
           </div>
         </div>
-        <div class="col">
-          <div class="title">
-            <p class="t1">台中</p>
-            <p class="t2">分公司</p>
-          </div>
-          <div class="content">
-            <p><a href="tel:0422920855"><span>+886-4-2292-0855</span></a></p>
-            <p><span>40667台中市北屯區文心路四段83號19樓 301室</span></p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="title">
-            <p class="t1">高雄</p>
-            <p class="t2">分公司</p>
-          </div>
-          <div class="content">
-            <p><a href="tel:073986788"><span>+886-7-398-6788</span></a></p>
-            <p><span>80761 高雄市三民區民族一路80號27樓之2 A08室</span></p>
-          </div>
-        </div>
       </div>
       <div class="right-subscribe">
         <div class="subject lato">News&nbsp;letter</div>

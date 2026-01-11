@@ -1,16 +1,16 @@
 <section class="sec sec-grey" id="about">
     <div class="container-1400">
         <div class="g-title scroll-fade-up">
-            <div class="t1">ABOUT FAIRLINE</div>
-            <h2 class="t2">關於中飛</h2>
+            <div class="t1">ABOUT PRONEW</div>
+            <h2 class="t2">關於正新</h2>
         </div>
         
         <div class="scroll-fade-up" style="text-align: center; max-width: 900px; margin: 0 auto 60px;">
-            <h3 style="font-size: 1.75rem; margin-bottom: 20px; color: var(--color-dark);">中飛科技旗下代理產品線網羅各大領導品牌</h3>
+            <h3 style="font-size: 1.75rem; margin-bottom: 20px; color: var(--color-dark);">正新電腦專精於軟體保護與資訊安全技術</h3>
             <p style="line-height: 1.8; color: #555;">
-                FIDELIS、IMPERVA、KEYSIGHT IXIA、RAPID7、SOPHOS、<br>
-                從基礎架構、應用層安全、資料安防及整合式管理方案，提供客戶一站購足的服務，<br>
-                我們專精於網路安全與應用層安全技術，整合產品、技術與人才三環節為中飛科技核心，提供最適合客戶需求且完善的整合性解決方案。
+                Keypro、軟體反盜版、軟體保護、軟體鎖、硬體鎖、軟體加密、保護鎖、<br>
+                動態密碼鎖、網路認證、身份認證、智慧卡、資訊安全、個資防護、雲端安全模組。<br>
+                整合產品、技術與人才，提供最適合客戶需求且完善的整合性解決方案。
             </p>
         </div>
 

@@ -1,5 +1,5 @@
 <?php
-// index.php - Fairline Layout with WebAuthn Integration
+// index.php - ProNew Layout with WebAuthn Integration
 ?>
 <!DOCTYPE html>
 <html lang="zh-tw">
