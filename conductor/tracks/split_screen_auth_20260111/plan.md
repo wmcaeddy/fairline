@@ -20,8 +20,8 @@ Goal: Refine the styling for the right-side authentication column.
 ## Phase 3: Mobile Responsiveness
 Goal: Ensure the layout stacks correctly on small screens.
 
-- [ ] Task: Add media queries to `index.php` to stack the columns (Hero on top, Auth below) on viewports < 768px.
-- [ ] Task: Adjust mobile-specific padding and margins for the auth card to ensure a clean mobile UX.
+- [x] Task: Add media queries to `index.php` to stack the columns (Hero on top, Auth below) on viewports < 768px. 3a37447
+- [x] Task: Adjust mobile-specific padding and margins for the auth card to ensure a clean mobile UX. 4df002a
 - [ ] Task: Conductor - User Manual Verification 'Mobile Responsiveness' (Protocol in workflow.md)
 
 ## Phase 4: Verification and Polish
