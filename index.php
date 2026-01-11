@@ -692,7 +692,8 @@
                 <h2 class="t2">關於正新</h2>
                 <div class="describe">
                     正新電腦專精於軟體保護與資訊安全技術，<br>
-                    提供最完善的軟體反盜版與身份認證解決方案。<br>
+                    提供 Sentinel 軟體授權管理與身份認證解決方案。<br>
+                    協助企業實現軟體價值變現與數位轉型。<br>
                     專業的團隊，精緻的服務。
                 </div>
             </div>
@@ -789,10 +790,10 @@
                             <p id="auth-user-id">@userid</p>
                         </div>
                         
-                        <div style="background: var(--color-bg); padding: 16px; border-radius: var(--radius-md); margin-bottom: 24px;">
+                        <div style="background: var(--color-bg); padding: 16px; border-radius: var(--radius-md); margin-bottom: 24px; border: 1px solid #eee;">
                             <p style="font-size: 0.875rem; margin-bottom: 4px; color: var(--color-text-primary); font-weight: 500;">目前狀態</p>
                             <p id="auth-login-time" class="login-meta">Login time: --</p>
-                            <p style="color: #1e7e34; font-weight: 500; margin-top: 8px;">登入成功</p>
+                            <p style="color: var(--color-primary); font-weight: 600; margin-top: 8px;">登入成功</p>
                         </div>
 
                         <button type="button" class="btn btn-secondary btn-block" onclick="logout()">
