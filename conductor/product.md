@@ -15,4 +15,4 @@ A modern, user-friendly implementation of the WebAuthn (FIDO2) server library, f
 ## Key Features
 *   **Mobile-First Design:** A seamless, responsive layout optimized for mobile devices and "hybrid" passkey authentication (e.g., scanning QR codes).
 *   **Modern UX:** Simplified flows for registering new credentials and authenticating with existing ones.
-*   **Split-Screen Layout:** A sophisticated landing page featuring a split-screen design on desktop, with branding on the left and a centered authentication card on the right. The layout automatically stacks vertically on mobile devices for optimal usability.
+*   **Adaptive Split-Screen Layout:** A sophisticated landing page featuring a prioritized, fixed-width authentication column on the right and a fluid branding section on the left. On mobile, the authentication section is prioritized and appears on top for immediate functional access.
