@@ -12,11 +12,11 @@
 - [x] Task: Ensure responsive behavior (hide branding side on mobile). eed5f8d
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Core Layout' (Protocol in workflow.md)
 
-## Phase 3: ProNew Visual Styling
-- [ ] Task: Implement Header and Navigation according to ProNew branding (using extracted assets).
-- [ ] Task: Apply ProNew typography and color palette (e.g., the signature maroon/purple color #841852).
-- [ ] Task: Style the auth forms, buttons, and input fields to match the ProNew design language.
-- [ ] Task: Implement the "Branding Side" content with hero imagery and descriptive text.
+## Phase 3: ProNew Visual Styling [checkpoint: 38228da]
+- [x] Task: Implement Header and Navigation according to ProNew branding (using extracted assets). eed5f8d
+- [x] Task: Apply ProNew typography and color palette (e.g., the signature maroon/purple color #841852). eed5f8d
+- [x] Task: Style the auth forms, buttons, and input fields to match the ProNew design language. 841852_refine
+- [x] Task: Implement the "Branding Side" content with hero imagery and descriptive text. eed5f8d
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Visual Styling' (Protocol in workflow.md)
 
 ## Phase 4: FIDO Integration and Final Polish
