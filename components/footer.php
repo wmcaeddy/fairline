@@ -1,15 +1,4 @@
 <footer class="footer">
-    <div class="footer__app">
-        <div class="container">
-            <ul class="blocks-app">
-                <li><a target="_blank" href="https://www.china-airlines.com/tw/zh/contact-us/index"><img class="img-normal" src="assets/theme/icon-contact.png" alt="China Airlines"><img class="img-hover" src="assets/theme/icon-contact-hover.png" alt="China Airlines"><p><span>聯絡我們</span></p></a></li>
-                <li><a target="_blank" href="#"><img class="img-normal" src="assets/theme/icon-branch.png" alt="China Airlines"><img class="img-hover" src="assets/theme/icon-branch-hover.png" alt="China Airlines"><p><span>分公司</span></p></a></li>
-                <li><a target="_blank" href="#"><img class="img-normal" src="assets/theme/icon-survey.png" alt="China Airlines"><img class="img-hover" src="assets/theme/icon-survey-hover.png" alt="China Airlines"><p><span>滿意度調查</span></p></a></li>
-                <li><a target="_blank" href="https://www.china-airlines.com/tw/zh/faq/index"><img class="img-normal" src="assets/theme/icon-faq.png" alt="China Airlines"><img class="img-hover" src="assets/theme/icon-hover-faq.png" alt="China Airlines"><p><span>常見問題</span></p></a></li>
-                <li><a target="_blank" href="https://www.china-airlines.com/tw/zh/fly/flight-status/mobile-services"><img class="img-normal" src="assets/theme/icon-download.png" alt="China Airlines"><img class="img-hover" src="assets/theme/icon-hover-download.png" alt="China Airlines"><p><span>下載應用程式</span></p></a></li>
-            </ul>
-        </div>
-    </div>
     <div class="footer__main">
         <div class="container">
             <div class="footer__social">
