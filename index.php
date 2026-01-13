@@ -13,6 +13,7 @@
 <link href="assets/theme/font-awesome.min.css" rel="stylesheet">
 <link href="assets/theme/animate.min.css" rel="stylesheet">
 <link href="assets/theme/custom.css" rel="stylesheet">
+<link href="assets/css/pchome.css" rel="stylesheet">
 <link href="assets/theme/plugin-slick.min.css" rel="stylesheet">
 <link href="assets/theme/plugin-fix.css" rel="stylesheet">
 <link href="assets/theme/plugin-magnific-popup.css" rel="stylesheet">
