@@ -1,9 +1,10 @@
 <header class="header clearfix" style="background: var(--color-primary); display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
   <div style="display: flex; align-items: center; width: 100%;">
-      <h1 class="logo" style="margin: 0; padding: 0; margin-right: 30px;">
-        <a href="index.php" title="PChome 24h購物" style="color: #fff; font-size: 24px; font-weight: 900; font-style: italic; text-decoration: none; font-family: Arial, sans-serif;">
+      <h1 class="logo" style="margin: 0; padding: 0; margin-right: 30px; display: flex; flex-direction: column;">
+        <a href="index.php" title="PChome 24h購物" style="color: #fff; font-size: 24px; font-weight: 900; font-style: italic; text-decoration: none; font-family: Arial, sans-serif; line-height: 1;">
           PChome 24h購物
         </a>
+        <span style="color: #fff; font-size: 10px; font-weight: normal; font-style: normal; letter-spacing: 1px;">Everywhere, Anytime</span>
       </h1>
       
       <div class="search-bar" style="flex: 1; max-width: 600px; display: flex; margin-right: 20px;">
@@ -16,19 +17,22 @@
       <div class="menu" style="margin-left: auto;">
         <ul class="reset" style="display: flex; gap: 20px; align-items: center; margin: 0;">
           <li>
-            <a href="#" style="color: #fff; font-size: 13px; display: flex; flex-direction: column; align-items: center;">
+            <a href="#" style="color: #fff; font-size: 13px; display: flex; flex-direction: column; align-items: center; text-decoration: none;">
                 <i class="fa fa-user" style="font-size: 16px; margin-bottom: 2px;"></i>
                 <span>登入</span>
             </a>
           </li>
           <li>
-            <a href="#" style="color: #fff; font-size: 13px; display: flex; flex-direction: column; align-items: center;">
-                <i class="fa fa-shopping-cart" style="font-size: 16px; margin-bottom: 2px;"></i>
+            <a href="#" style="color: #fff; font-size: 13px; display: flex; flex-direction: column; align-items: center; text-decoration: none; position: relative;">
+                <div style="position: relative;">
+                    <i class="fa fa-shopping-cart" style="font-size: 18px; margin-bottom: 2px;"></i>
+                    <span style="position: absolute; top: -8px; right: -10px; background: #fff; color: #ec2c22; font-size: 10px; font-weight: bold; border-radius: 10px; padding: 0 5px; border: 1px solid #ec2c22;">0</span>
+                </div>
                 <span>購物車</span>
             </a>
           </li>
           <li>
-            <a href="#" style="color: #fff; font-size: 13px; display: flex; flex-direction: column; align-items: center;">
+            <a href="#" style="color: #fff; font-size: 13px; display: flex; flex-direction: column; align-items: center; text-decoration: none;">
                 <i class="fa fa-question-circle" style="font-size: 16px; margin-bottom: 2px;"></i>
                 <span>顧客中心</span>
             </a>

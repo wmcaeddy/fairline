@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>中飛科技股份有限公司 ::: WebAuthn 驗證服務</title>
+<title>PChome 24h購物 - Passkey 安全登入</title>
 
 <link href="assets/theme/favicon.ico" rel="icon">
 <link href="assets/theme/bootstrap-5.3.3.min.css" rel="stylesheet">
@@ -50,8 +50,8 @@
         align-items: center;
         padding: 40px;
         background: #fdfdfd;
-        border-left: 1px solid #eee; /* Subtle separator */
-        z-index: 2; /* Ensure it stays on top if overlapping occurs */
+        border-left: 1px solid #e0e0e0;
+        z-index: 2;
     }
 
     /* Override Banner Styles for Split Screen */
@@ -82,66 +82,66 @@
     .auth-wrapper {
         position: relative;
         width: 100%;
-        max-width: 480px; /* Slightly smaller for split view */
+        max-width: 480px;
     }
     .auth-card {
         background: #fff;
-        padding: 40px 30px;
-        border-radius: 16px;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.08);
-        border: 1px solid rgba(0,0,0,0.03);
-        transition: transform 0.3s ease;
+        padding: 40px;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        border: 1px solid #ddd;
     }
-    .auth-card:hover {
-        transform: translateY(-5px);
+    .auth-header {
+        border-bottom: 2px solid #ec2c22;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
     }
     .auth-header h3 {
-        font-size: 2rem;
-        margin-bottom: 12px;
-        color: #2c3e50;
-        font-weight: 700;
-        letter-spacing: -0.5px;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        color: #ec2c22;
+        font-weight: 900;
     }
     .auth-header p {
-        color: #777;
-        font-size: 0.95rem;
+        color: #666;
+        font-size: 0.9rem;
     }
     
     /* Form Elements */
     .form-group { margin-bottom: 20px; }
-    .form-label { display: block; margin-bottom: 8px; font-weight: 600; color: #444; font-size: 0.9rem; }
+    .form-label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; font-size: 0.9rem; }
     .form-control-theme {
         width: 100%;
-        padding: 12px 15px;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        font-size: 1rem;
-        transition: border-color 0.3s;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        font-size: 0.95rem;
     }
-    .form-control-theme:focus { border-color: #86a5b7; outline: none; }
+    .form-control-theme:focus { border-color: #0077b9; outline: none; box-shadow: 0 0 5px rgba(0,119,185,0.2); }
     
     /* Buttons */
     .btn-group-vertical { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
     .btn-theme {
-        padding: 15px;
-        border-radius: 6px;
-        font-weight: 600;
+        padding: 12px;
+        border-radius: 2px;
+        font-weight: bold;
         text-align: center;
         cursor: pointer;
-        transition: all 0.3s;
+        transition: background 0.2s;
         border: none;
         width: 100%;
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
-    .btn-theme-primary { background-color: #2c3e50; color: #fff; }
-    .btn-theme-primary:hover { background-color: #1a252f; transform: translateY(-2px); }
-    .btn-theme-secondary { background-color: #f8f9fa; color: #2c3e50; border: 1px solid #ddd; }
-    .btn-theme-secondary:hover { background-color: #e9ecef; }
+    .btn-theme-primary { background-color: #ec2c22; color: #fff; }
+    .btn-theme-primary:hover { background-color: #d11a10; }
+    .btn-theme-secondary { background-color: #fff; color: #333; border: 1px solid #ccc; }
+    .btn-theme-secondary:hover { background-color: #f5f5f5; }
     
     /* Settings & Status */
     .settings-toggle { text-align: center; margin-top: 20px; }
-    .settings-toggle a { color: #86a5b7; font-size: 0.85rem; text-decoration: none; font-weight: 500; }
-    .status-message { margin-top: 20px; padding: 15px; border-radius: 6px; font-size: 0.9rem; text-align: center; }
+    .settings-toggle a { color: #0077b9; font-size: 0.85rem; text-decoration: none; font-weight: bold; }
+    .settings-toggle a:hover { text-decoration: underline; }
+    .status-message { margin-top: 20px; padding: 15px; border-radius: 2px; font-size: 0.9rem; text-align: center; border: 1px solid #ddd; background: #f9f9f9; }
     
     /* Utilities */
     .hidden { display: none !important; }
@@ -149,24 +149,24 @@
         position: absolute; top: 0; left: 0; right: 0; bottom: 0;
         background: rgba(255,255,255,0.9); z-index: 10;
         display: flex; flex-direction: column; align-items: center; justify-content: center;
-        border-radius: 12px;
+        border-radius: 4px;
     }
     .spinner {
-        width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #86a5b7;
+        width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #ec2c22;
         border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 15px;
     }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
     /* Advanced Settings Styles */
-    #advanced-settings { margin-top: 20px; padding-top: 20px; border-top: 1px dashed #eee; text-align: left; }
+    #advanced-settings { margin-top: 20px; padding-top: 20px; border-top: 1px dashed #ddd; text-align: left; }
     .config-group { margin-bottom: 15px; }
-    .config-group h5 { font-size: 0.85rem; margin-bottom: 10px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+    .config-group h5 { font-size: 0.85rem; margin-bottom: 10px; color: #333; font-weight: bold; }
     .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; margin-bottom: 5px; color: #555; }
     .user-section-card { text-align: center; }
-    .avatar-circle { width: 80px; height: 80px; background-color: #86a5b7; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; margin: 0 auto 20px; }
+    .avatar-circle { width: 80px; height: 80px; background-color: #ec2c22; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; margin: 0 auto 20px; }
     .user-info h4 { margin-bottom: 5px; color: #333; }
     .user-info p { font-size: 0.9rem; color: #777; margin-bottom: 20px; }
-    .session-info { background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 25px; }
+    .session-info { background: #fff1f0; padding: 15px; border-radius: 4px; margin-bottom: 25px; border: 1px solid #ffa39e; }
 
     /* Mobile Responsiveness (Phase 3) */
     @media (max-width: 768px) {
@@ -226,12 +226,12 @@
                             </button>
                         </div>
 
-                        <div class="text-center" style="margin-top: 15px;">
-                            <button type="button" style="background:none; border:none; color:#bbb; font-size:0.75rem; cursor:pointer;" onclick="togglePreview()">[ Show Server Data ]</button>
+                        <div class="text-center" style="margin-top: 20px;">
+                            <button type="button" style="background:none; border:none; color:#0077b9; font-size:0.85rem; cursor:pointer; font-weight:bold;" onclick="togglePreview()">查看伺服器資料 <i class="fa fa-database"></i></button>
                         </div>
 
                         <div class="settings-toggle">
-                            <a href="javascript:void(0);" onclick="toggleSettings()">進階設定 <i class="fa fa-cog"></i></a>
+                            <a href="javascript:void(0);" onclick="toggleSettings()">進階安全性設定 <i class="fa fa-shield"></i></a>
                         </div>
 
                         <!-- Advanced Settings (Collapsed) -->
@@ -285,10 +285,10 @@
                                                 <p id="status-message" style="margin: 0;"></p>
                                             </div>
                     
-                                            <div id="preview-container" class="hidden" style="margin-top: 15px; border: 1px solid #eee; border-radius: 4px; padding: 10px;">
+                                            <div id="preview-container" class="hidden" style="margin-top: 15px; border: 1px solid #ddd; border-radius: 2px; padding: 10px; background: #fff;">
                                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                                    <h4 style="font-size: 0.8rem; margin: 0; color: #666;">Server Data</h4>
-                                                    <button type="button" style="background: #fce8e6; border: 1px solid #d93025; color: #d93025; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; cursor: pointer;" onclick="clearRegistration()">Clear All</button>
+                                                    <h4 style="font-size: 0.85rem; margin: 0; color: #333; font-weight: bold;">伺服器端資料 (Server Data)</h4>
+                                                    <button type="button" style="background: #fff; border: 1px solid #ccc; color: #333; padding: 2px 10px; border-radius: 2px; font-size: 0.75rem; cursor: pointer;" onclick="clearRegistration()">清除資料</button>
                                                 </div>
                                                 <iframe src="_test/server.php?fn=getStoredDataHtml" id="serverPreview" style="width: 100%; height: 200px; border: 1px solid #eee; background: #fafafa;"></iframe>
                                             </div>

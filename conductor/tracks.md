@@ -32,7 +32,3 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ## [x] Track: Adaptive Split-Screen with Fixed-Width Auth
 *Link: [./conductor/tracks/fixed_width_auth_20260111/](./conductor/tracks/fixed_width_auth_20260111/)*
----
-
-## [~] Track: PChome Theme Integration
-*Link: [./conductor/tracks/pchome_theme_20260113/](./conductor/tracks/pchome_theme_20260113/)*
