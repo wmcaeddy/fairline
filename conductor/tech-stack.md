@@ -10,6 +10,7 @@
 ## Frontend
 *   **HTML5 / CSS3:** For a modern, responsive layout.
 *   **Vanilla JavaScript:** For handling the WebAuthn API handshakes and asynchronous server communication.
+*   **Theme Assets:** Organized in `assets/theme/` (CSS, JS, Fonts, Images).
 
 ## Infrastructure & Tools
 *   **Composer:** For dependency management.
